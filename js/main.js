@@ -1,6 +1,6 @@
 'use strict'
 
-console.log('hoal');
+/* console.log('hoal');
 
 const title = document.querySelector('h1');
 console.log(title);
@@ -14,4 +14,16 @@ console.log(button);
 button.addEventListener('input', function(event){
  console.log(event.target.value);
  title.innerHTML=event.target.value;
-})
+}) */
+
+
+
+const { createApp } = Vue
+
+createApp({
+    data() {
+        return {
+            message: 'Hello Vue!'
+        }
+    }
+}).mount('#app')
