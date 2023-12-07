@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VUE</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -18,12 +19,38 @@
 
     <div id="app" v-cloak>
 
+        <img :src="img" v-show="showImg">
+
         <div> {{message}} </div>
         <div>{{subtitle}} </div>
         <input type="text" v-model="message">
         <button @click="greetings">bototonnne</button>
-        <p v-if="awesome">sono visualizzato perche awesome</p>
-        <p v-else>non vengo visualizzato</p>
+        <p v-if="mode==='1' ">sono visualizzato perche mode===1</p>
+        <p v-else-if="mode==='2'">sono visualizzato perche mode===2</p>
+        <p v-else> vengo visualizzato perche mode !==1 && mode!==2</p>
+
+        <select v-model="mode">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+
+        <div>{{ friends.toString()}}</div>
+
+        <div v-for="friend in friends">{{friend}}</div>
+
+        <div v-for="personaggio in lista">
+            <h2> {{personaggio.nome}}</h2>
+            <h3>{{personaggio.eta}}</h3>
+            <h3 v-if="personaggio.faDomande">fa tante domande</h3>
+            <h3 v-else> non fa tante domande </h3>
+        </div>
+
+
+
+        <div v-for="n in nLoops">non lo so{{n}}</div>
+        <!-- <div>FigmaDesign2512</div>
+ -->
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
