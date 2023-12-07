@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VUE</title>
     <link rel="stylesheet" href="style.css">
+    <!--  font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--  font-awesome -->
 </head>
 
 <body>
@@ -19,7 +24,7 @@
 
     <div id="app" v-cloak>
 
-        <img :src="img" v-show="showImg">
+        <!--  <img :src="img" v-show="showImg">
 
         <div> {{message}} </div>
         <div>{{subtitle}} </div>
@@ -27,7 +32,7 @@
         <button @click="greetings">bototonnne</button>
         <p v-if="mode==='1' ">sono visualizzato perche mode===1</p>
         <p v-else-if="mode==='2'">sono visualizzato perche mode===2</p>
-        <p v-else> vengo visualizzato perche mode !==1 && mode!==2</p>
+        <p v-else> ve   ngo visualizzato perche mode !==1 && mode!==2</p>
 
         <select v-model="mode">
             <option value="1">1</option>
@@ -49,8 +54,47 @@
 
 
         <div v-for="n in nLoops">non lo so{{n}}</div>
-        <!-- <div>FigmaDesign2512</div>
- -->
+        -->
+
+        <div class="title">{{pageTitle}}</div>
+
+        <div class="container">
+            <div class="card movie">
+                <img :src="movie.imgaes[0]" class="poster">
+                <div class="thumbnails">
+                    <img :src="img" class="thumb" v-for="img in movie.imgaes">
+                </div>
+                <div class="navigator">
+                    <div class="prev" @click="prevImg">
+                        <i class="fa-solid fa-circle-chevron-left"></i>
+                    </div>
+                    <div class="next" @click="nextImg">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="details">
+                    <h3 class="title">{{movie.title}}</h3>
+                    <div>{{movie.category}}</div>
+                    <small>{{movie.length}}</small>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
