@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<!-- 
+    <!-- 
 
 
     <h1>testo</h1>
@@ -16,7 +16,15 @@
 
     <input type="text" id="testo"> -->
 
-    <div id="app"></div>
+    <div id="app" v-cloak>
+
+        <div> {{message}} </div>
+        <div>{{subtitle}} </div>
+        <input type="text" v-model="message">
+        <button @click="greetings">bototonnne</button>
+        <p v-if="awesome">sono visualizzato perche awesome</p>
+        <p v-else>non vengo visualizzato</p>
+    </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="js/main.js"></script>
