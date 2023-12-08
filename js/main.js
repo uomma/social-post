@@ -23,6 +23,7 @@ const { createApp } = Vue
 const vm = createApp({
     data() {
         return {
+            activeImg: 0,
             pageTitle: 'sono il titolo della pagina',
 
             movie: {
@@ -55,11 +56,23 @@ const vm = createApp({
     },
     methods: {
         nextImg() {
-            
-        }, 
+            this.activeImg++;
+            if (this.activeImg > this.movie.imgaes.length - 1) {
+                this.activeImg = 0;
+            }
+        },
 
         prevImg() {
-           
+
+            this.activeImg--;
+            if (this.activeImg < 0) {
+                this.activeImg = this.movie.imgaes.length - 1;
+            }
+        },
+
+        selectimg(index, event) {
+            this.activeImg = index;
+            
         }
 
 

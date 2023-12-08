@@ -60,9 +60,9 @@
 
         <div class="container">
             <div class="card movie">
-                <img :src="movie.imgaes[0]" class="poster">
+                <img :src="movie.imgaes[activeImg]" class="poster">
                 <div class="thumbnails">
-                    <img :src="img" class="thumb" v-for="img in movie.imgaes">
+                    <img class="thumb" v-for="(img, index) in movie.imgaes" :src="img" @click="selectimg(index, $event)">
                 </div>
                 <div class="navigator">
                     <div class="prev" @click="prevImg">
